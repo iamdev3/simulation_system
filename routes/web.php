@@ -22,5 +22,6 @@ Route::resource('prizes', PrizesController::class);
 Route::get('/', function () {
     return redirect()->route('prizes.index');
 });
-Route::post('/simulate', '\App\Http\Controllers\PrizesController@simulate')->name('simulate');
-Route::post('/reset', '\App\Http\Controllers\PrizesController@reset')->name('reset');
+
+Route::post('/simulate', [PrizesController::class, 'simulate'])->name('simulate');
+Route::get('/reset', [PrizesController::class, 'reset'])->name('reset');

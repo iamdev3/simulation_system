@@ -11,7 +11,11 @@ class Prize extends Model
 
     protected $guarded = ['id'];
 
-
+    protected $fillable = [
+        'title',
+        'probability',
+        'awarded'
+    ];
 
 
     public  static function nextPrize()
